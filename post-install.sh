@@ -186,7 +186,7 @@ apt install -y openssh-server || {
 
 # Install  usefull utilities
 echo "Installing  usefull utilities..."
-apt install -y openssh-server wget curl git gnupg2 || {
+apt install -y openssh-server wget curl git gnupg2 ufw|| {
     echo "Failed to install  usefull utilities. Check your Internet connection and retry."
     exit 1
 }
