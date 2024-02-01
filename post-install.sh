@@ -24,7 +24,7 @@ fi
 
 # Add Debian repository sources to /etc/apt/sources.list
 echo "Adding Debian repository sources to /etc/apt/sources.list..."
-cat <<EOF >> /etc/apt/sources.list
+cat > EOF >> /etc/apt/sources.list
 deb http://deb.debian.org/debian bookworm main non-free-firmware
 deb-src http://deb.debian.org/debian bookworm main non-free-firmware
 
