@@ -103,8 +103,8 @@ adduser "$username" sudo
 # Add the user to the sudoers file
 echo "$username ALL=(ALL) ALL" >> /etc/sudoers
 
-# Remove the user kizaru
-deluser --remove-home kizaru
+# Remove the user debian
+deluser --remove-home debian
 
 # Check the desktop environment
 current_desktop=$(echo $XDG_CURRENT_DESKTOP)
