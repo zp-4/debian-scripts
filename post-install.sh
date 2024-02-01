@@ -184,6 +184,13 @@ apt install -y openssh-server || {
     exit 1
 }
 
+# Install  usefull utilities
+echo "Installing  usefull utilities..."
+apt install -y openssh-server wget curl git gnupg2 || {
+    echo "Failed to install  usefull utilities. Check your Internet connection and retry."
+    exit 1
+}
+
 # Clean up unused packages and update the system
 echo "Cleaning up unused packages and final update..."
 apt autoremove -y
