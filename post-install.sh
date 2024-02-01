@@ -22,6 +22,19 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+# Add Debian repository sources to /etc/apt/sources.list
+echo "Adding Debian repository sources to /etc/apt/sources.list..."
+cat <<EOF >> /etc/apt/sources.list
+deb http://deb.debian.org/debian bookworm main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm main non-free-firmware
+
+deb http://deb.debian.org/debian-security/ bookworm-security main non-free-firmware
+deb-src http://deb.debian.org/debian-security/ bookworm-security main non-free-firmware
+
+deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
+deb-src http://deb.debian.org/debian bookworm-updates main non-free-firmware
+EOF
+
 # Change the hostname
 read -p "Enter the new hostname: " newhostname
 hostnamectl set-hostname "$newhostname"
